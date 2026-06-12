@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESSENTIAL PIXEL SET BLACK</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#000;
+}
+
+.top-bar{
+    height:80px;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.logo{
+    height:50px;
+}
+
+.basket{
+    width:40px;
+    height:40px;
+    position:absolute;
+    right:15px;
+}
+
+.main-image{
+    width:100%;
+    aspect-ratio:1/1.25;
+    object-fit:cover;
+    display:block;
+}
+
+.thumbnail-row{
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding:12px;
+}
+
+.thumbnail-row::-webkit-scrollbar{
+    display:none;
+}
+
+.thumb{
+    width:110px;
+    height:110px;
+    flex-shrink:0;
+    object-fit:cover;
+    opacity:.5;
+    border:3px solid transparent;
+    cursor:pointer;
+}
+
+.thumb.selected{
+    opacity:1;
+    border:3px solid #000;
+}
+
+.content{
+    padding:15px;
+}
+
+.title{
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.warning{
+    color:red;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.instructions{
+    line-height:2;
+    margin-bottom:20px;
+}
+
+.bottom-text{
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.option-buttons{
+    display:flex;
+    gap:8px;
+    margin-bottom:15px;
+}
+
+.toggle-btn{
+    flex:1;
+    height:50px;
+    border:2px solid #000;
+    background:#fff;
+    color:#000;
+    border-radius:0;
+    font-weight:bold;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.toggle-btn.active{
+    background:#000;
+    color:#fff;
+}
+
+.open-btn{
+    width:100%;
+    height:55px;
+    border:none;
+    background:#000;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:0;
+    cursor:pointer;
+}
+
+.popup-frame{
+    display:none;
+    position:fixed;
+    top:90px;
+    right:10px;
+    width:280px;
+    background:#fff;
+    border:1px solid #ccc;
+    padding:12px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+    z-index:999;
+}
+
+.popup-title{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.popup-content{
+    display:flex;
+    gap:10px;
+}
+
+.popup-image{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+
+.popup-right{
+    flex:1;
+}
+
+.popup-text{
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.popup-open-btn{
+    width:100%;
+    height:40px;
+    background:#000;
+    color:#fff;
+    border:none;
+    border-radius:0;
+    cursor:pointer;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <img class="logo" src="https://i.ibb.co/Y4SxgDsq/offgrid.webp">
+    <img class="basket" src="https://i.ibb.co/Nd6gBgqS/basket.webp">
+</div>
+
+<img id="mainImage" class="main-image" src="https://i.ibb.co/xWDhYNt/ygm.webp">
+
+<div class="thumbnail-row">
+
+    <img class="thumb selected" src="https://i.ibb.co/xWDhYNt/ygm.webp">
+    <img class="thumb" src="https://i.ibb.co/5x42D2Tj/front.webp">
+    <img class="thumb" src="https://i.ibb.co/bjhmrqWP/back.webp">
+    <img class="thumb" src="https://i.ibb.co/DPWqQDXj/top.webp">
+    <img class="thumb" src="https://i.ibb.co/2wHYnWN/bottom.webp">
+
+</div>
+
+<div class="content">
+
+    <div class="title">
+        ESSENTIAL PIXEL SET BLACK SHORT SET
+    </div>
+
+    <div class="warning">
+        5 Left
+    </div>
+
+    <div class="instructions">
+		- 100% COTTON TEXTURED KNIT
+		- LIGHTWEIGHT, BREATHABLE, AND EASY TO WEAR
+		- ELEVATED SUMMER SET WITH A PREMIUM FEEL
+    </div>
+
+    <div class="bottom-text">
+        SIZE
+    </div>
+
+    <div class="option-buttons">
+        <button class="toggle-btn active">XS</button>
+        <button class="toggle-btn">S</button>
+        <button class="toggle-btn">M</button>
+        <button class="toggle-btn">L</button>
+        <button class="toggle-btn">XL</button>
+    </div>
+
+    <button class="open-btn" id="openWebhook">
+        Add to Basket £9.99
+    </button>
+
+</div>
+
+<div class="popup-frame" id="popupFrame">
+
+    <div class="popup-title">
+        Added to Basket
+    </div>
+
+    <div class="popup-content">
+
+        <img src="https://i.ibb.co/xWDhYNt/ygm.webp" class="popup-image">
+
+        <div class="popup-right">
+
+            <div class="popup-text">
+                ESSENTIAL PIXEL BLACK SHORT SET - £9.99
+            </div>
+
+            <button class="popup-open-btn" id="popupOpenBtn">
+                Go to Basket
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+const mainImage = document.getElementById("mainImage");
+const thumbs = document.querySelectorAll(".thumb");
+
+thumbs.forEach(thumb => {
+    thumb.addEventListener("click", () => {
+        mainImage.src = thumb.src;
+
+        thumbs.forEach(t => t.classList.remove("selected"));
+        thumb.classList.add("selected");
+    });
+});
+
+const buttons = document.querySelectorAll(".toggle-btn");
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        buttons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+    });
+});
+
+const openBtn = document.getElementById("openWebhook");
+const popup = document.getElementById("popupFrame");
+
+openBtn.addEventListener("click", () => {
+    popup.style.display = "block";
+});
+
+// ✅ NEW: popup button opens website
+const popupOpenBtn = document.getElementById("popupOpenBtn");
+
+popupOpenBtn.addEventListener("click", () => {
+    window.open("https://offgridclothing.github.io/short-set-checkout/checkout.html", "_blank"); 
+});
+</script>
+
+</body>
+</html>
